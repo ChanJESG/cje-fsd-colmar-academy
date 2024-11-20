@@ -93,27 +93,33 @@ nav > a{
 
 /* Set up header area */
 header{
+    display: flex;   
     background-color: #d8d8d8;
-    display: flex;    
+    align-items: center;
+    justify-content: center;
+}
+
+.imgcontainer{
+    padding: 2rem 1.5rem;
 }
 
 header img{
-    width: 100%;
-    padding: 2rem 1.5rem
-    /* TODO */
-    /* to adjust image to the center */
+    max-width: 100%;  /* set the max width image can take */
+    height: auto; /* set img to maintain proportionality - aspect ratio */
 }
 
 header > div{
     display:flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 1.5rem;
-    padding-right: 3.375rem;
+    flex-direction: column;  /* set content in a single column */
+    justify-content: space-evenly;  /* center content horizontally */
+    height: 18rem; /* adjust desired height of container */
+    margin-right: 3rem;
+    color: #4a4a4a;
 }
 
 header div > h1{
-    font-size: xx-large
+    font-size: xx-large;
+    font-weight: 600;
 }
 
 header div > h2{
