@@ -113,7 +113,7 @@ header > div{
     flex-direction: column;  /* set content in a single column */
     justify-content: space-evenly;  /* center content horizontally */
     height: 18rem; /* adjust desired height of container */
-    margin-right: 3rem;
+    margin-right: 3rem; /* created a right padding for the right header */
     color: #4a4a4a;
 }
 
@@ -217,6 +217,26 @@ header div > a{
     font-size: small;
 }
 
+
+/* Setup footer section */
+footer{
+    font-size: 0.8rem;
+    display: flex;
+    grid-column: full-start / full-end;
+    justify-content: space-between;
+    border-top: 1px solid #e7e7e7;
+    padding: 1rem 1.5rem 2rem
+}
+
+footer > ul {
+    display: flex;
+    list-style: none;
+}
+
+footer > ul > li{
+    align-content: center;
+    margin-right: 0.5rem;
+}
 
 /* Hide events mobile */
 
