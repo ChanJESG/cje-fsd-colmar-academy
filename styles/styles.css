@@ -113,7 +113,7 @@ header > div{
     flex-direction: column;  /* set content in a single column */
     justify-content: space-evenly;  /* center content horizontally */
     height: 18rem; /* adjust desired height of container */
-    margin-right: 3rem; /* created a right padding for the right header */
+    padding-right: 3rem; /* created a right padding for the right header */
     color: #4a4a4a;
 }
 
@@ -237,7 +237,10 @@ footer > ul > li{
     align-content: center;
     margin-right: 0.5rem;
 }
-
+/* Hide navigation mobile */
+#nav-mobile{
+    display:none
+}
 /* Hide events mobile */
 
 
@@ -252,9 +255,50 @@ footer > ul > li{
 
 /* if the width of screen is 640px and below (aka 40rem x 16px) */
 @media screen and (max-width: 40rem ) {
-    
+    /* desktop nav hidden at 640px or less */
+    nav{
+        display:none
+    }
 
+    #nav-mobile{
+        display: flex;
+        justify-content: space-around;
+        grid-column: full-start / full-end;
+        height: 4rem;
+    }
+
+    #nav-mobile img{
+        height: 2.8rem
+    }
+
+    /* Set the header image to consume the full space */
+    header{
+        display: grid;
+        grid-column: full-start / full-end;
+        background-color: #dbdbdb;
+    }
+
+    .imgcontainer{
+        padding: 0;
+    }
+
+    header > div{
+        display: block;
+        width: auto;
+        height: auto;
+        padding: 2rem 1rem;
+    }
+
+    header > div > h2{
+        margin-bottom: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    header > div > a{
+        background-color: #9b9b9b;
+    }
 }
+
 
 /* *********************** */
 /** End of Mobile Section **/
