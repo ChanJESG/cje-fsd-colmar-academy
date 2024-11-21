@@ -5,7 +5,7 @@
 *{
     margin: 0;
     padding: 0;
-    outline: 1px dashed cyan 
+    /* outline: 1px dashed cyan  */
 }
 
 html{
@@ -61,7 +61,7 @@ nav ul li:last-child{
     padding-right:1.5rem;
 }
 nav ul li a{
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 nav > a{
@@ -87,12 +87,16 @@ nav > a{
 }
 
 .logoname-light{
-    font-weight: lighter;
+    font-weight: 400;
     color: #9b9b9b;
 
 }
 
 /* Set up navigation links' styles */
+
+nav > ul > li > a:hover{
+    color: #6aa3e6
+}
 
 
 /* Set up header area */
@@ -123,11 +127,12 @@ header > div{
 
 header div > h1{
     font-size: xx-large;
-    font-weight: 600;
+    font-weight: 800;
 }
 
 header div > h2{
     font-size: large;
+    font-weight: 650;
 }
 
 header div > a{
@@ -171,7 +176,7 @@ header div > a{
 .practice > .practicetext > p > span{
     display: block;
     margin: auto;
-    font-weight: bold;
+    font-weight: 500;
     padding: 2rem 0
 }
 
@@ -201,6 +206,7 @@ header div > a{
 .events > .events-block > .events-desktop-img{
     width: 100%;
     height: auto;
+    box-shadow: 2px 0px 0px #d8d8d8, -2px 0px 0px #d8d8d8
 }
 
 .events > .events-block > .events-text{
@@ -211,6 +217,7 @@ header div > a{
 
 .events > .events-block > .events-text > h3{
     font-size: large;
+    color: #4a4a4a;
 }
 
 .events > .events-block > .events-text > p{
@@ -221,6 +228,7 @@ header div > a{
 .events > .events-block > .events-text > a{
     color: #6aa3e6;
     font-size: small;
+    font-weight: 500
 }
 
 /* Setup learning section */
@@ -250,6 +258,11 @@ header div > a{
     background-color: #fff;
 }
 
+.learning-card:hover{
+    transition: 0.45s ease-out;
+    transform: scale(1.05)
+}
+
 .learning-card > a > img{
     display: block;
     max-width: 100%;
@@ -258,6 +271,7 @@ header div > a{
 
 #learning > .learning-container > .learning-card > a > .learning-text{
     margin: 1rem 1rem 2rem 1rem;
+    color: #4a4a4a
 }
 
 #learning > .learning-container > .learning-card > a > .learning-text > h4{
@@ -291,7 +305,8 @@ header div > a{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 0 1.5rem
+    padding: 0 1.5rem;
+    color: #4a4a4a
 }
 
 #thesis-video > video{
@@ -300,8 +315,13 @@ header div > a{
     margin-bottom: 1.5rem;
 }
 
+#thesis-video > h2{
+    font-weight: 600
+}
+
 #thesis-video > p{
-    padding: 0.5rem 0 2rem 0
+    padding: 0.5rem 0 2rem 0;
+    font-size: small
 }
 
 
@@ -315,8 +335,8 @@ header div > a{
     display: grid;
     grid-template-columns: 0.35fr 0.65fr;
     align-items: center;
-    padding: 1rem
-
+    padding: 1rem;
+    color: #4a4a4a
 }
 
 #thesis-right > .thesis-block > img{
@@ -328,6 +348,14 @@ header div > a{
     height: 100%;
     align-content: center;
     margin-left: 1rem
+}
+
+#thesis-right > .thesis-block > .thesis-text > h3{
+    font-weight: 600;
+}
+
+#thesis-right > .thesis-block > .thesis-text > p{
+    font-size: small;
 }
 
 #thesis-right > .thesis-block:first-child{
@@ -357,10 +385,21 @@ footer > ul > li{
     margin-right: 0.5rem;
 }
 
+footer > ul > li > a:hover{
+    color: #6aa3e6
+}
 
+/* Hide nav mobile */
+#nav-mobile{
+    display: none;
+}
 
 /* Hide events mobile */
 .events > .events-block > .events-mobile-img{
+    display: none;
+}
+
+#thesis-title-mobile{
     display: none;
 }
 
@@ -401,6 +440,7 @@ footer > ul > li{
 
     .imgcontainer{
         padding: 0;
+        margin: 0
     }
 
     header > div{
@@ -460,7 +500,75 @@ footer > ul > li{
         justify-content: space-evenly;
         width: 100%;
         height: auto;
-        margin: 1rem 0rem 0rem 1rem;
+        margin: 1rem 0rem 1.5rem 1rem;
+    }
+
+    .events > .events-block > .events-text > h3{
+        font-size: xx-large
+    }
+
+    .events > .events-block > .events-text > p{
+        font-size: large
+    }
+
+    .events > .events-block > .events-text > a{
+        font-size: large;
+    }
+
+
+    /* Set learning section for mobile */
+    #learning img, #learning p{
+        display: none
+    }
+
+    #learning > .learning-container{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem
+    }
+
+    #learning > .learning-container > .learning-card > a > .learning-text{
+        margin: 1rem 0rem 1.5rem 1rem;
+        color: #4a4a4a;
+    }
+
+    #learning > .learning-container > .learning-card > a > .learning-text > h4{
+        font-size: x-large;
+        font-weight: 650;
+    }
+
+    #learning > .learning-container > .learning-card{
+        background-color: #d8d8d8;
+    }
+
+    /* set thesis for mobile */
+    #thesis-video h2, #thesis-video p, #thesis-right, #thesis-title{
+        display: none
+    }
+
+    #thesis-title-mobile{
+        display: flex;
+        grid-column: full-start / full-end;
+        justify-content: center;
+    }
+    
+    #thesis-title-mobile > h2{
+        font-size: xx-large;
+        padding: 2rem 0
+    }
+
+    #thesis-video{
+        display: flex;
+        grid-column: full-start / full-end;
+        padding: 0;   
+    }
+
+    #thesis-video > video{
+        margin-bottom: 1.5rem
+    }
+
+    #thesis-video > p{
+        padding: 0
     }
 
     /* Set footer for mobile */
