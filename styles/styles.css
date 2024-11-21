@@ -1,11 +1,11 @@
 /* TODO */
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 /* Reset CSS */
 /* Universal selector (*) targets every element (regardless tag, class, ID) */
 *{
     margin: 0;
     padding: 0;
-    /* outline: 1px dashed cyan  */
+    outline: 1px dashed cyan 
 }
 
 html{
@@ -14,13 +14,17 @@ html{
 }
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
     background-color: #fff
 }
 
 a{
     text-decoration: none;
     color: inherit;
+}
+
+h2{
+    color: #4a4a4a;
 }
 
 .container{
@@ -156,11 +160,12 @@ header div > a{
 .practice > .practicetext > h1{
     font-size: xx-large;
     padding-bottom: 1.5rem;
+    color: #4a4a4a;
 }
 
 .practice > .practicetext > p{
     font-size: small;
-    font-weight: lighter;
+    font-weight: 300;
 }
 
 .practice > .practicetext > p > span{
@@ -169,6 +174,7 @@ header div > a{
     font-weight: bold;
     padding: 2rem 0
 }
+
 /* Set up events section */
 .events{
     display: grid;
@@ -176,7 +182,7 @@ header div > a{
     border-left: 1px solid #e7e7e7;
 }
 
-.events .events-block{
+.events > .events-block{
     display: grid;
     grid-template-columns: 0.35fr 0.65fr;
     align-items: center;
@@ -184,38 +190,151 @@ header div > a{
     padding: 1rem
 }
 
-.events .events-block:first-child{
+.events > .events-block:first-child{
     padding-top: 2rem;
 }
 
-.events .events-block:last-child{
+.events > .events-block:last-child{
     background-color: #d8d8d8;
 }
 
-.events img{
+.events > .events-block > .events-desktop-img{
     width: 100%;
     height: auto;
 }
 
-.events .events-text{
+.events > .events-block > .events-text{
     margin-left: 1rem;
     height: 100%;
     align-content: center;
 }
 
-.events .events-text h3{
+.events > .events-block > .events-text > h3{
     font-size: large;
 }
 
-.events .events-text p{
+.events > .events-block > .events-text > p{
     font-size: small;
     padding: 0.5rem 0
 }
 
-.events .events-text a{
+.events > .events-block > .events-text > a{
     color: #6aa3e6;
     font-size: small;
 }
+
+/* Setup learning section */
+
+#learning{
+    display: grid;
+    grid-column: full-start / full-end;
+    background-color: #eaebec;
+}
+
+#learning > div > h2{
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    margin-top: 2rem
+}
+
+.learning-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 2rem 4.5rem
+}
+
+/* Setup learning cards */
+.learning-card{
+    background-color: #fff;
+}
+
+.learning-card > a > img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+#learning > .learning-container > .learning-card > a > .learning-text{
+    margin: 1rem 1rem 2rem 1rem;
+}
+
+#learning > .learning-container > .learning-card > a > .learning-text > h4{
+    font-size: large;
+}
+
+#learning > .learning-container > .learning-card > a > .learning-text > .courses{
+    text-transform: uppercase;
+    margin: 0.5rem 0rem;
+    font-size: small;
+}
+
+#learning > .learning-container > .learning-card > a > .learning-text > .scope{
+    font-size: small;
+
+}
+
+/* Setup thesis section */
+#thesis-title{
+    display: flex;
+    grid-column: full-start / full-end;
+    justify-content: center;
+}
+
+#thesis-title > h2{
+    font-size: xx-large;
+    padding: 2rem 0
+}
+
+#thesis-video{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0 1.5rem
+}
+
+#thesis-video > video{
+    width: 100%;
+    height: auto;
+    margin-bottom: 1.5rem;
+}
+
+#thesis-video > p{
+    padding: 0.5rem 0 2rem 0
+}
+
+
+#thesis-right{
+    display: grid;
+    grid-template-rows: repeat(2, min-content);
+
+}
+
+#thesis-right > .thesis-block{
+    display: grid;
+    grid-template-columns: 0.35fr 0.65fr;
+    align-items: center;
+    padding: 1rem
+
+}
+
+#thesis-right > .thesis-block > img{
+    width: 100%;
+    height: auto;
+}
+
+#thesis-right > .thesis-block > .thesis-text{
+    height: 100%;
+    align-content: center;
+    margin-left: 1rem
+}
+
+#thesis-right > .thesis-block:first-child{
+    background-color: #d8d8d8;
+}
+
+
 
 
 /* Setup footer section */
@@ -237,11 +356,13 @@ footer > ul > li{
     align-content: center;
     margin-right: 0.5rem;
 }
-/* Hide navigation mobile */
-#nav-mobile{
-    display:none
-}
+
+
+
 /* Hide events mobile */
+.events > .events-block > .events-mobile-img{
+    display: none;
+}
 
 
 /** ********************** **/
@@ -255,9 +376,9 @@ footer > ul > li{
 
 /* if the width of screen is 640px and below (aka 40rem x 16px) */
 @media screen and (max-width: 40rem ) {
-    /* desktop nav hidden at 640px or less */
-    nav{
-        display:none
+    /* desktop nav and practice hidden at 640px or less */
+    nav, .practice{
+        display: none
     }
 
     #nav-mobile{
@@ -297,8 +418,60 @@ footer > ul > li{
     header > div > a{
         background-color: #9b9b9b;
     }
-}
 
+    
+    /* set up mobile events section */
+    .events > .events-block > .events-desktop-img{
+        display: none;
+    }
+
+    .events > .events-block > .events-mobile-img{
+        display: block; 
+        width: 100%;
+        height: auto;
+    }
+
+    .events{
+        display: grid;
+        grid-column: full-start / full-end;
+        background-color: #f3f5f5;
+    }
+
+    .events > .events-block:first-child{
+        padding-top: 1rem
+    }
+
+    .events > .events-block:last-child{
+        background-color: #f3f5f5;
+        padding-bottom: 2rem;
+    }
+
+    .events > .events-block{
+        display: flex;
+        flex-direction: column;
+        border: none;
+        padding: 0;
+        padding: 4rem 1rem 0 1rem
+    }
+
+    .events > .events-block > .events-text{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 100%;
+        height: auto;
+        margin: 1rem 0rem 0rem 1rem;
+    }
+
+    /* Set footer for mobile */
+    footer{
+        padding-bottom: 1rem;
+    }
+    footer > ul{
+        display: none;
+    }
+   
+}
 
 /* *********************** */
 /** End of Mobile Section **/
